@@ -10,3 +10,4 @@ def about_view(request):
 
 def contact_view(request):
     return render(request,template_name='contact.html')
+ 
