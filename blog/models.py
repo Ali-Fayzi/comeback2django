@@ -1,9 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Post(models.Model):
     # image
+    image = models.ImageField(verbose_name="post image" , upload_to="posts/",default=None,null=True)
     # author
+    author = models.ForeignKey(User,on_delete=models.SET_NULL , null=True)
     title = models.CharField(verbose_name="Title",name="title",primary_key=False,max_length=60)
     content = models.TextField(verbose_name="Content",name="content",primary_key=False)
     # tag
@@ -19,6 +22,7 @@ class Post(models.Model):
         ordering = ['created_date']
         verbose_name = "پست"
         verbose_name_plural = "پست ها "
+        
     def __str__(self):
         return self.title
     

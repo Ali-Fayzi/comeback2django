@@ -1,0 +1,22 @@
+{% load blog_tags %}
+{% load static %}
+
+
+{% for p  in post %}
+
+<div class="col-lg-6">
+    <div class="top-recipe-item large-item">
+        <div class="top-recipe-img set-bg" data-setbg="{% static 'img/top-recipe' %}/recipe-1.jpg">
+            <i class="fa fa-plus"></i>
+        </div>
+        <div class="top-recipe-text">
+            <div class="cat-name">Desert</div>
+            <a href="#">
+                <h4>{{ p.title }}</h4>
+            </a>
+            <p>{{ p.content }} </p>
+        </div>
+    </div>
+</div>
+
+{% endfor %}

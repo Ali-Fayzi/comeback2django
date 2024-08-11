@@ -32,15 +32,14 @@
             </div>
         </div>
 
-        {% for post in posts %}
 
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="blog-text">
                         <div class="blog-title">
-                            <span>{{ post.created_date }}</span>
-                            <h2><a href="/post/{{post.title}}">{{ post.title }}</a></h2>
+                            <span>{{data.created_date}}</span>
+                            <h2>{{data.title}}</h2>
                             <ul class="tags">
                                 <li>Desert</li>
                                 <li>Asian</li>
@@ -48,7 +47,7 @@
                             </ul>
                         </div>
                         <div class="blog-desc">
-                            <p>{{ post.content }}</p>
+                            <p>{{data.content}}</p>
                            
                         </div>
                         <div class="blog-comment">
@@ -84,7 +83,6 @@
         
         </div>
 
-        {% endfor %}
     </section>
     <!-- Blog Section End -->
 
@@ -132,5 +130,4 @@
         </div>
     </section>
     <!-- Similar Recipe Section End -->
-
 {% endblock %}
