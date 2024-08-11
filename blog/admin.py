@@ -10,4 +10,8 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ['title' ,'content']
 
 # admin.site.register(Post,PostAdmin)
-admin.site.register(Contact)
+
+class ContactAdmin(admin.ModelAdmin):
+    list_filter= ["created_date"]
+    list_display = ["name","subject","message"]
+admin.site.register(Contact,ContactAdmin)

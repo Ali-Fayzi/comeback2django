@@ -32,3 +32,9 @@ class Contact(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     
+    class Meta:
+        ordering = ['created_date']
+        verbose_name = 'تماس با ما '
+        verbose_name_plural = "تماس با ما ها "
+    def __str__(self):
+        return self.subject
